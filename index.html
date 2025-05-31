@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>PWA MobileNet Demo test5</title>
 
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="/mobilenet-pwa/manifest.json">
   <link rel="icon" href="/icons/icon-192.png">
 
   <!-- TensorFlow.js и MobileNet -->
-  <script src="./libs/tf.min.js"></script>
-  <script src="./libs/mobilenet.min.js"></script>
+  <script src="/mobilenet-pwa/libs/tf.min.js"></script>
+  <script src="/mobilenet-pwa/libs/mobilenet.min.js"></script>
 </head>
 <body>
   <h1>PWA MobileNet Demo test5</h1>
@@ -25,10 +25,10 @@
   <div id="results"></div>
   <p>Откройте консоль (F12), чтобы увидеть предсказания.</p>
 
-  <script src="index.js"></script>
+  <script src="/mobilenet-pwa/index.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js')
+      navigator.serviceWorker.register('/mobilenet-pwa/service-worker.js')
         .then(() => console.log('[SW] зарегистрирован'))
         .catch(err => console.warn('[SW] регистрация провалилась:', err));
     }
