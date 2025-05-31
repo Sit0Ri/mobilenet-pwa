@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PWA MobileNet Demo test5</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="/icons/icon-192.png">
+
+  <!-- TensorFlow.js и MobileNet -->
+  <script src="./libs/tf.min.js"></script>
+  <script src="./libs/mobilenet.min.js"></script>
+</head>
+<body>
+  <h1>PWA MobileNet Demo test5</h1>
+  <label>
+    Выбрать фото:
+    <input id="file-input" type="file" accept="image/*">
+  </label>
+  <button id="cam-btn">Сделать фото</button>
+  <br><br>
+  <img id="img" src="coffee.jpg" width="300" alt="Здесь будет ваша картинка">
+  <br><br>
+  <div id="results"></div>
+  <p>Откройте консоль (F12), чтобы увидеть предсказания.</p>
+
+  <script src="index.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(() => console.log('[SW] зарегистрирован'))
+        .catch(err => console.warn('[SW] регистрация провалилась:', err));
+    }
+  </script>
+</body>
+</html>
